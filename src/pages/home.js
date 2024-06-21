@@ -24,26 +24,27 @@ function HomePage(){
 
     return(
     <div className="homeContainer">
-        <section className="leftHome"></section>
+        <section className="leftHome">3</section>
         <section className="midHome">
             {!propertyInsight ? (<><h1>RayRater</h1>
             {isLoading && (<LoadingSign/>)}
             </>
             ): (<><h2>RayRater</h2>
-                <p><GetMap latitude={propertyInsight.center.latitude} 
+                {propertyInsight.center ? (<p><GetMap latitude={propertyInsight.center.latitude} 
                 longitude={propertyInsight.center.longitude} 
                 zoom={zoom}
                 imgType={imgType}
-                /></p>
+                /></p>):(<p>Invalid address: Must be building. Please try again.</p>)}
+                
             {isLoading && (<LoadingSign/>)}</>)}
 
             <AutoCompleteBar 
             setPropertyInsight={setPropertyInsight} 
             setPropertyDataLayers={setPropertyDataLayers}
             setIsLoading={ setIsLoading }/>
-            {propertyInsight && <SolarResponse 
+            {propertyInsight && (propertyInsight.solarPotential && <SolarResponse 
             insight={propertyInsight} 
-            dataLayers={propertyDataLayers}/>}
+            dataLayers={propertyDataLayers}/>)}
         </section>
         <section className="rightHome">
             <h2>Image settings</h2>

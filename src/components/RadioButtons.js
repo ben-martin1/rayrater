@@ -2,7 +2,6 @@ import React from "react";
 
 function RadioButtons({ setImgType }){
     function handleChange(e){
-        console.log("IMGTYPE CHANGE: ", e.target.value);
         setImgType(e.target.value);
     }
 

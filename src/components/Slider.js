@@ -3,7 +3,6 @@ import React from "react";
 function SlideBar({setMapZoom}){
     function handleChange(e) {
         const value = parseInt(e.target.value, 10)
-        console.log(value);
         setMapZoom(value);
     }
     return(

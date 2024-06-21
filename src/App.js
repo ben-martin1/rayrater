@@ -16,19 +16,19 @@ function App() {
   return (
     <BrowserRouter>
     <div className="container">
-    <header>
-      <Menu/>
-    </header>
-      <main>
-          <Routes>
-            <Route path="/about" element={<BurgerPage/>}/>
-            <Route path="/" element={<HomePage />}/>
-            <Route path="/request" element={<RequestPage />}/>
-          </Routes>
-      </main>
-      <footer>
-        <p>&copy; 2024 Ben Martin</p>
-      </footer>
+      <header>
+        <Menu/>
+      </header>
+        <main>
+            <Routes>
+              <Route path="/about" element={<BurgerPage/>}/>
+              <Route path="/" element={<HomePage />}/>
+              <Route path="/request" element={<RequestPage />}/>
+            </Routes>
+        </main>
+        <footer>
+          <p>&copy; 2024 Ben Martin</p>
+        </footer>
     </div>
     </BrowserRouter>
   );

@@ -79,6 +79,7 @@ footer{
 
 .addressSuggestion{
   background-color: rgb(23, 107, 135);
+  text-align: left;
   color: rgb(238, 245, 255);
   padding: 6px;
 }
@@ -87,6 +88,8 @@ footer{
 }
 
 .container {
+  display:flex;
+  flex-direction: column;
   height: 100vh;
 }
 
@@ -99,20 +102,17 @@ footer{
 }
 .homeContainer{
   display:flex;
+  flex-direction: row;
   height: 90vh;
 }
 
 .midHome{
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex: 9;
+  flex: 8;
 }
 .rightHome{
-  flex:1;
-  text-align: left;
-  padding-top: 10vh;
-  position: relative;
+  flex: 2;
+  position: -webkit-fixed; 
+  top: 0;
 }
 
 .leftHome{
@@ -121,4 +121,19 @@ footer{
 
 @keyframes rotate{
   100% {transform:rotate(720deg);}
+}
+td{
+  background-color: rgb(23, 107, 135);
+  color: rgb(238, 245, 255);
+  padding: 6px;
+  border-bottom: 1px solid rgb(238, 245, 255);;
+}
+.leftAlign{
+  text-align: left;
+}
+
+.centerAlign{
+  margin-left: auto;
+  margin-right: auto;
+  display: table; 
 }

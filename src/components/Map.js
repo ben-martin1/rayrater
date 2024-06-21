@@ -9,7 +9,6 @@ function GetMap({ latitude, longitude, zoom, imgType, marker }){
     &map_id=f4db7d501757bc0d
     &maptype=${imgType}
    `
-   console.log(`color:blue%7Clabel:S%${latitude},${longitude}`)
   return(
         <>
         <img src = {url}/>
