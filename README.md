@@ -1,3 +1,14 @@
+:sunny: 
+# RAY RATER 
+:sunny:
+
+https://www.rayrater.com/
+
+Built using React, this application pulls data using the Google Places API to fetch data from the Google Solar API. Provides optimal solar panel information, including placement, vertical vs landscape orientation, and angle/pitch. Gives an estimation of how much carbon can be saved per MWH generated.
+
+
+Setup info below :point_down:
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

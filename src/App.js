@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -7,10 +6,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Menu from './components/Navbar';
 
 // pages
-import BurgerPage from './pages/burger';
+import AboutPage from './pages/about';
 import HomePage from './pages/home';
-import RequestPage from './pages/request';
-import { useState } from 'react';
 
 function App() {
   return (
@@ -21,9 +18,8 @@ function App() {
       </header>
         <main>
             <Routes>
-              <Route path="/about" element={<BurgerPage/>}/>
+              <Route path="/about" element={<AboutPage/>}/>
               <Route path="/" element={<HomePage />}/>
-              <Route path="/request" element={<RequestPage />}/>
             </Routes>
         </main>
         <footer>

@@ -11,7 +11,7 @@ function GetMap({ latitude, longitude, zoom, imgType, marker }){
    `
   return(
         <>
-        <img src = {url}/>
+        <img src = {url} alt={"search result"}/>
         </>
         
     );

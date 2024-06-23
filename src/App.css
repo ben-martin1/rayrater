@@ -1,38 +1,181 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html{
+  font-family: "Roboto";
+  color: rgb(238, 245, 255);
+}
+
+nav{
+  text-align: center;
+  height: 3vh;
+}
+h1{
+  color: rgb(23, 107, 135);
+  text-align: center;
+  font-size: 100px;
+}
+h2{
+  color: rgb(23, 107, 135);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav a{
+  margin: 4px;
+  text-decoration: none;
+  color:rgb(23, 107, 135);
+  padding: 12px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.solarSearch{
+  color: rgb(238, 245, 255);
+  background-color:rgb(23, 107, 135);
+  border-radius: 5px;
+  padding:6px;
+  width: 62%;
+}
+.segmentDetail{
+  background-color: rgb(238, 245, 255);
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+button{
+  margin-left: 12px;
+  background-color: rgb(23, 107, 135);
+  color: rgb(238, 245, 255);
+  padding: 6px;
+  border-radius: 5px;
+}
+button:active{
+  border: 2px solid rgb(23, 107, 135);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-color: rgb(10, 54, 68);
+}
+
+.searchElement{
+  text-align: left;
+  padding-top: 4px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.searchElement:hover{
+  background-color: rgb(10, 54, 68);
+  color: rgb(238, 245, 255);
+  cursor: pointer;
+}
+
+section{
+  text-align: center;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+main{
+  flex: 1;
+}
+
+body{
+  color:black;
+  background-color: rgb(238, 245, 255);
+}
+
+footer{
+  color:  black;
+  height: 2vh;
+}
+.searchParent{
+  position:relative;
+}
+
+.addressContainer{
+  margin-left:22vw;
+  position:absolute;
+  top:35px;
+  left:-11vw;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.addressSuggestion{
+  background-color: rgb(23, 107, 135);
+  text-align: left;
+  color: rgb(238, 245, 255);
+  padding: 6px;
+}
+.addressSuggestion:hover{
+  cursor: pointer;
+  background-color: rgb(10, 54, 68);
+}
+
+.container {
+  color: black;
+  display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 91vh;
 }
 
-.App-link {
-  color: #61dafb;
+.loading{
+  animation: rotate 2s infinite;
+}
+@keyframes rotate{
+  100% {transform:rotate(720deg);}
+}
+.sliderContainer{
+  transform: rotate(270deg);
+}
+.homeContainer{
+  
+  display:flex;
+  flex-direction: row;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.midHome{
+  flex: 8;
+}
+.rightHome{
+  flex: 2;
+  top: 0;
+}
+
+.leftHome{
+  display:flex;
+  flex-direction: column;
+  flex:2;
+}
+
+tbody{
+  table-layout: fixed;
+}
+td{
+  background-color: rgb(23, 107, 135);
+  color: rgb(238, 245, 255);
+  width: 25%;
+}
+.wideRow{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color:black;
+  padding-bottom: 20px;
+  padding-top: 8px;
+  background-color: rgb(238, 245, 255);
+}
+.leftAlign{
+  text-align: left;
+}
+
+.padLeft{
+  padding-left: 10vh;
+  padding-right: 10vh;
+}
+
+.centerAlign{
+  margin-left: auto;
+  margin-right: auto;
+  display: table; 
 }

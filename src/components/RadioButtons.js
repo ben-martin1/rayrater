@@ -1,8 +1,8 @@
 import React from "react";
 
-function RadioButtons({ setImgType }){
+function RadioButtons({ fn }){
     function handleChange(e){
-        setImgType(e.target.value);
+        fn(e.target.value);
     }
 
     return(

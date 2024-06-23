@@ -1,13 +1,13 @@
 import React from "react";
 
-function SlideBar({setMapZoom}){
+function SlideBar({fn, min, max,}){
     function handleChange(e) {
         const value = parseInt(e.target.value, 10)
-        setMapZoom(value);
+        fn(value);
     }
     return(
     <div className="slidecontainer">
-        <input type="range" defaultValue={17} min="17" max="21" className="slider" id="zoom" onChange={handleChange}/>
+        <input type="range" defaultValue={min} min={min} max={max} className="slider" id="zoom" onChange={handleChange}/>
     </div>
     );
 }

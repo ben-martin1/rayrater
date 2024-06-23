@@ -1,34 +1,32 @@
 import React from "react";
 import PlacesAutoComplete, {
     geocodeByAddress,
-    geocodeByPlaceId,
     getLatLng,
   } from 'react-places-autocomplete';
 import findClosestBuilding from "./SolarRequest";
 import { useState } from "react";
 
-function AutoCompleteBar({setPropertyInsight, setPropertyDataLayers, setIsLoading}){
+function AutoCompleteBar({setPropertyInsight, setPropertyDataLayers, setIsLoading, addSearch, addAddress, setActiveAddress, activeAddress}){
     
     const [address, setAddress] = useState("");
-    const [coordinates, setCoordinates] = useState({
-        lat: null,
-        lng: null
-    });
 
-    const handleClick = () => {
-        address != "" && handleSelect(address);
+
+    function handleClick(input=address){
+        input !== address ? (address !== "" && handleSelect(address)) : (input !== "" && handleSelect(input));
     }
 
-    const handleSelect = async address=>{
+    async function handleSelect(address) {
         setIsLoading(true);
         const results = await geocodeByAddress(address);
         const latLng = await getLatLng(results[0])
         setAddress(address);
-        setCoordinates(latLng);
 
         const { insight, dataLayers } = await findClosestBuilding(latLng);
         setPropertyInsight(insight);
         setPropertyDataLayers(dataLayers);
+        addSearch(insight);
+        addAddress(address);
+        setActiveAddress(address);
         setIsLoading(false);
     }
 
@@ -36,12 +34,12 @@ function AutoCompleteBar({setPropertyInsight, setPropertyDataLayers, setIsLoadin
     <>
     <div>
     <PlacesAutoComplete 
-    value={address}
-    onChange={setAddress} 
+    value={activeAddress}
+    onChange={setActiveAddress} 
     onSelect={handleSelect}
     highlightFirstSuggestion = {true}
-    >{({ getInputProps, suggestions, getSuggestionItemProps, loading }) => 
-    (<div>
+    >{({ getInputProps, suggestions, getSuggestionItemProps, loading}) => 
+    (<div className="searchParent">
         <input className="solarSearch" {...getInputProps({placeholder: "Find solar data..."})}/>
         <button onClick={handleClick}>Search</button>
         <div className="addressContainer">
@@ -60,4 +58,5 @@ function AutoCompleteBar({setPropertyInsight, setPropertyDataLayers, setIsLoadin
     </>
     );
 }
-export default AutoCompleteBar
+
+export default AutoCompleteBar;
